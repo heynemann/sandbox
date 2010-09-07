@@ -1,0 +1,11 @@
+Como um internauta
+Eu quero testar o google
+Para continuar pesquisando
+
+Cenário 1 - Pesquisar Larissa Riquelme
+Dado que
+    Eu navego para Pagina de Busca do Google
+Quando
+    Eu pesquiso a "Larissa Riquelme"
+Então
+    Eu fico feliz
