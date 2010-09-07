@@ -1,0 +1,27 @@
+<h1>Listing pessoas</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Data de nascimento</th>
+    <th>Altura</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pessoas.each do |pessoa| %>
+  <tr>
+    <td><%= pessoa.nome %></td>
+    <td><%= pessoa.data_de_nascimento %></td>
+    <td><%= pessoa.altura %></td>
+    <td><%= link_to 'Show', pessoa %></td>
+    <td><%= link_to 'Edit', edit_pessoa_path(pessoa) %></td>
+    <td><%= link_to 'Destroy', pessoa, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pessoa', new_pessoa_path %>
