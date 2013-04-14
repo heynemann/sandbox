@@ -13,7 +13,7 @@ char* strdup(const char* str) {
     size_t siz;
     char* copy;
 
-    siz = strlen(str) + 1; // WHY +1?
+    siz = strlen(str) + 1;
 
     if ((copy = malloc(siz)) == NULL) {
         return NULL; // why? If I can't allocate?
