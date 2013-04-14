@@ -3,21 +3,6 @@
 #include <string.h>
 #include <stdbool.h>
 
-char* strdup(const char* str) {
-    size_t siz;
-    char* copy;
-
-    siz = strlen(str) + 1; // WHY +1?
-
-    if ((copy = malloc(siz)) == NULL) {
-        return NULL; // why? If I can't allocate?
-    }
-
-    memcpy(copy, str, siz);
-
-    return copy;
-}
-
 void reverse(char* word) {
     int length = (int)strlen(word);
     int i=0, j=(int)length - 1;
