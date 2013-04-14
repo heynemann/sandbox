@@ -39,4 +39,12 @@ int main(int argc, char* argv[]) {
     strcpy(word, "facebook");
     remove_duplicates(word);
     printf("facebook = %s\n", word);
+
+    strcpy(word, "aaabbb");
+    remove_duplicates(word);
+    printf("aaabbb = %s\n", word);
+
+    strcpy(word, "abcd");
+    remove_duplicates(word);
+    printf("abcd = %s\n", word);
 }
