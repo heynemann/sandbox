@@ -20,6 +20,16 @@
       return this.swim(index);
     };
 
+    PriorityQueue.prototype.pop = function() {
+      var item;
+
+      item = this.items[1];
+      this["switch"](1, this.items.length - 1);
+      this.items.pop();
+      this.sink(1);
+      return item;
+    };
+
     PriorityQueue.prototype.swim = function(itemIndex) {
       var item, k, parent, parentIndex, _results;
 
@@ -33,6 +43,24 @@
           this["switch"](k, parentIndex);
         }
         _results.push(k = Math.floor(k / 2));
+      }
+      return _results;
+    };
+
+    PriorityQueue.prototype.sink = function(itemIndex) {
+      var childIndex, k, _results;
+
+      k = itemIndex;
+      _results = [];
+      while (k < this.items.length) {
+        childIndex = k * 2;
+        if (this.compare(this.items[childIndex + 1], this.items[childIndex])) {
+          childIndex++;
+        }
+        if (this.compare(this.items[childIndex], this.items[k])) {
+          this["switch"](k, childIndex);
+        }
+        _results.push(k = childIndex);
       }
       return _results;
     };

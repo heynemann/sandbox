@@ -11,6 +11,16 @@ class PriorityQueue
         @items[index] = item
         @swim(index)
 
+    pop: ->
+        item = @items[1]
+
+        @switch(1, @items.length - 1)
+        @items.pop()
+
+        @sink(1)
+
+        return item
+
     swim: (itemIndex) ->
         k = itemIndex
         while (k > 1)
@@ -21,6 +31,15 @@ class PriorityQueue
                 @switch(k, parentIndex)
 
             k = Math.floor(k / 2)
+
+    sink: (itemIndex) ->
+        k = itemIndex
+        while (k < @items.length)
+            childIndex = k * 2
+            childIndex++ if @compare(@items[childIndex + 1], @items[childIndex])
+            if @compare(@items[childIndex], @items[k])
+                @switch(k, childIndex)
+            k = childIndex
 
     greater: (item, other) ->
         return item > other
