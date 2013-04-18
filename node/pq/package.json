@@ -1,0 +1,31 @@
+{
+  "name": "pq",
+  "preferGlobal": false,
+  "version": "0.1.0",
+  "author": "Bernardo Heynemann <heynemann@gmail.com>",
+  "description": "a simple priority queue",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heynemann/sandbox"
+  },
+  "keywords": [
+    "algorithm",
+    "heap",
+    "queue"
+  ],
+  "dependencies" : {
+  },
+  "analyze": false,
+  "devDependencies": {
+    "coffee-script": "latest",
+    "vows"     :  "latest",
+    "jscoverage" :  "latest"
+  },
+  "bundledDependencies": [
+  ],  
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
