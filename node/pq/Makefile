@@ -1,8 +1,11 @@
-compile:
-	@./node_modules/.bin/coffee -c pq/*.coffee
+COFFEE=./node_modules/.bin/coffee
+VOWS=./node_modules/.bin/vows
 
-test: compile
-	@./node_modules/.bin/vows -spec --cover-plain
+compile:
+	@${COFFEE} --join ./pq/pq.js --compile pq/*.coffee
+
+tests: compile
+	@${VOWS} -spec --cover-plain
 
 setup:
 	@npm install .

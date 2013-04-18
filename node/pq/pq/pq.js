@@ -3,21 +3,18 @@
   var PriorityQueue;
 
   PriorityQueue = (function() {
-    function PriorityQueue() {}
-
-    PriorityQueue.prototype.constructor = function() {
+    function PriorityQueue() {
       this.items = [null];
-      return this.n = 1;
-    };
+      this.n = 1;
+    }
 
     PriorityQueue.prototype.size = function() {
-      return this.items.length;
+      return this.items.length - 1;
     };
 
     PriorityQueue.prototype.put = function(item) {
-      console.log(this.items);
-      //this.items[this.n] = item;
-      //return this.swim(this.n);
+      this.items[this.n] = item;
+      return this.swim(this.n);
     };
 
     PriorityQueue.prototype.swim = function(itemIndex) {};
