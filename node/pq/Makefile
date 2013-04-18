@@ -7,5 +7,8 @@ compile:
 tests: compile
 	@${VOWS} -spec --cover-plain
 
+debug: compile
+	@node debug ${VOWS} -spec --cover-plain
+
 setup:
 	@npm install .
